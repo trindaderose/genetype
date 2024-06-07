@@ -7,15 +7,25 @@ const P5Sketch = () => {
 
 	useEffect(() => {
 		const sketch = (p) => {
+			let mathematicalFont = [];
 			let font;
 			let points;
-			let words = ["thinking", "about", "you", "creative", "coding"];
+			let words = [
+				"genetype",
+				"is",
+				"about",
+				"modular",
+				"mathematical",
+				"typography",
+			];
 			let font_size = 200;
 
 			const colors = ["#ff0000", "hotpink", "#a3e366"];
 
 			p.preload = () => {
-				font = p.loadFont("/Roobert-Regular.otf"); // Make sure this font file is in the public folder
+				mathematicalFont[0] = p.loadFont("/Akzidenz-Grotesk.otf");
+				mathematicalFont[1] = p.loadFont("/Helvetica.otf");
+				mathematicalFont[2] = p.loadFont("/UniversLTStd-Bold.ttf");
 			};
 
 			p.setup = () => {
@@ -23,6 +33,9 @@ const P5Sketch = () => {
 				p.noFill();
 				p.background("#fff");
 				p.frameRate(2);
+
+				// Initialize font after preload
+				font = p.random(mathematicalFont);
 			};
 
 			p.draw = () => {
@@ -51,14 +64,12 @@ const P5Sketch = () => {
 			};
 
 			function check_bounds(bounds) {
-				if (
+				return !(
 					bounds.x < 1 ||
 					bounds.x + bounds.w > p.windowWidth ||
 					bounds.y < 1 ||
 					bounds.y + bounds.h > p.windowHeight
-				)
-					return false;
-				else return true;
+				);
 			}
 
 			function rubble(obj) {
@@ -70,10 +81,11 @@ const P5Sketch = () => {
 					);
 				p.push();
 				p.translate(obj.pos.x, obj.pos.y);
-				p.rotate(obj.a);
+				// Uncomment the next line if you define `a` somewhere
+				// p.rotate(obj.a);
 				p_arr.forEach(function (item) {
 					p.beginShape();
-					regular_polygon(item.x, item.y, p.random([0, 9, 4]), 8).forEach(
+					regular_polygon(item.x, item.y, p.random([10, 10, 4]), 6).forEach(
 						function (item2) {
 							p.vertex(item2.x, item2.y);
 						}
@@ -95,7 +107,6 @@ const P5Sketch = () => {
 				return points_arr;
 			}
 
-			// Ported from https://web.archive.org/web/20130215093241/http://www.colingodsey.com/javascript-gaussian-random-number-generator/
 			function myGaussian() {
 				let x1, x2, rad;
 
