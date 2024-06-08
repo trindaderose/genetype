@@ -104,21 +104,8 @@ export function Underlay() {
 					The web is what we make it.
 				</p>
 				<div style={{ width: 10 }} />
-				<p
-					className="full"
-					style={{
-						flex: "1 1 0%",
-						fontSize: 16,
-						fontWeight: "700",
-						lineHeight: "1em",
-						textAlign: "right",
-						color: "#000",
-						whiteSpace: "nowrap",
-						marginLeft: "10px",
-					}}
-				>
-					{[today]}
-				</p>
+					{today}
+
 			</div>
 		</div>
 	);

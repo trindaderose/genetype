@@ -1,18 +1,18 @@
-<h1 align="center">Tykhe Website 👋</h1>
+<h1 align="center">Genetype 👋</h1>
 <p>
 A P5.js project with Vite
 </p>
 
-### 🏠 [Homepage]()
+### 🏠 [Homepage](https://genetype.pages.dev/)
 
-### ✨ [Demo]()
+### ✨ [Demo](https://genetype.pages.dev/)
 
 ## TODO
 
 > - Add Controllers
+> - Add Responsiveness
 
 ## DONE
-
 
 ## Install
 

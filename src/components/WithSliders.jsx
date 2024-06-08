@@ -8,7 +8,7 @@ const WithSliders = () => {
 	const [bgColor, setBgColor] = useState("#ffffff");
 	const [colorG, setColorG] = useState(0);
 	const [colorB, setColorB] = useState(0);
-	const [fontSize, setFontSize] = useState(500);
+	const [fontSize, setFontSize] = useState(12, 700);
 	const [frameRate, setFrameRate] = useState(5);
 	const [rubbleW, setRubbleW] = useState(2);
 	const [rubbleH, setRubbleH] = useState(2);

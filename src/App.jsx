@@ -13,7 +13,7 @@ function App() {
 	};
 
 	return (
-		<>
+		<div className="na">
 			<Underlay />
 			<div className="nav">
 				<button onClick={toggleWithSliders}>
@@ -21,7 +21,7 @@ function App() {
 				</button>
 			</div>
 			{showWithSliders ? <WithSliders /> : <P5Sketch />}
-		</>
+		</div>
 	);
 }
 
