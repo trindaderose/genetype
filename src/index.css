@@ -1,11 +1,8 @@
 :root {
-	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+	font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
 	line-height: 1.5;
 	font-weight: 400;
-
-	color-scheme: light dark;
-	color: rgba(255, 255, 255, 0.87);
-	background-color: #242424;
+	background-color: transparent !important;
 
 	font-synthesis: none;
 	text-rendering: optimizeLegibility;
@@ -58,62 +55,16 @@ button:focus-visible {
 
 @media (prefers-color-scheme: light) {
 	:root {
-		color: #213547;
-		background-color: #ffffff;
 	}
 	a:hover {
 		color: #000;
 	}
 	button {
-		background-color: #f9f9f9;
+
 	}
 }
 
-.slider-input {
-	width: fit-content;
-	height: 1rem;
-	font-size: 1rem;
-	border-radius: 5px;
-	background-color: #ccc;
-	padding: 10px;
-	transition: background-color 0.3s ease;
-	margin-bottom: 1rem;
-	display: "inline-flex"
-
-	&::-webkit-slider-thumb {
-		width: 20px;
-		height: 20px;
-		border-radius: 50%;
-		background-color: #fff;
-		cursor: pointer;
-		transition: background-color 0.3s ease;
-	}
-
-	&::-moz-range-thumb {
-		width: 20px;
-		height: 20px;
-		border-radius: 50%;
-		background-color: #fff;
-		cursor: pointer;
-		transition: background-color 0.3s ease;
-	}
-
-	&:hover::-webkit-slider-thumb,
-	&:hover::-moz-range-thumb {
-		background-color: #ff0000;
-	}
-}
-
-.container-info {
-
-	background-color: rgba(0, 0, 0, 0.5);
-	color: #fff !important;
-	padding: 1rem;
-	width: fit-content;
-	align-items: flex-start;
-	justify-content: flex-start;
-	backdrop-filter: blur(12px);
-	border-radius: 10px;
-	filter: drop-shadow(3 1.75rem rgba(255, 0, 0, 0.6));
-	border: 1px solid rgba(10, 0, 0, 0.6);
+.nav {
+	background-color: transparent;
+	backdrop-filter: blur(10px);
 }

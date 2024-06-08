@@ -9,8 +9,9 @@ export function Underlay() {
 				top: 0,
 				left: 0,
 				width: "100%",
-				height: "100%",
+				height: "100vh",
 				padding: 40,
+				marginTop: 20,
 				display: "inline-flex",
 				flexDirection: "column",
 				alignItems: "flex-start",
@@ -22,7 +23,6 @@ export function Underlay() {
 				style={{
 					width: "100%",
 					padding: 0,
-					display: "inline-flex",
 					flexDirection: "row",
 					alignItems: "left",
 					justifyContent: "left",
@@ -31,7 +31,7 @@ export function Underlay() {
 				<p
 					style={{
 						flex: "1 1 0%",
-						height: 30,
+						height: 40,
 						fontSize: 30,
 						fontWeight: "700",
 						lineHeight: "30px",
@@ -39,19 +39,6 @@ export function Underlay() {
 					}}
 				>
 					genetype
-				</p>
-				<div style={{ flex: "1 1 0%", display: "flex", gap: "2em" }}></div>
-				<p
-					style={{
-						flex: "1 1 0%",
-						height: 30,
-						fontSize: 30,
-						lineHeight: "30px",
-						textAlign: "right",
-						color: "#000",
-					}}
-				>
-					🍀
 				</p>
 			</div>
 			<div style={{ height: 60 }} />
@@ -67,9 +54,13 @@ export function Underlay() {
 			>
 				<b> genetype is about modular </b>
 				<br />
-				mathematical typography.
+				mathematical typography paths.
+				<br />
+				it is still under development.
 				<br />
 				<b>—</b>
+				<br />
+				<b> made with p5.js and vite.</b>
 			</p>
 
 			<div style={{ height: 7 }} />

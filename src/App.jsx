@@ -1,4 +1,5 @@
 import "./App.css";
+import "./index.css";
 import P5Sketch from "./components/P5Sketch";
 import WithSliders from "./components/WithSliders";
 import { useState } from "react";
@@ -14,11 +15,11 @@ function App() {
 	return (
 		<>
 			<Underlay />
-			<nav>
+			<div className="nav">
 				<button onClick={toggleWithSliders}>
-					{showWithSliders ? "Voltar" : "Config"}
+					{showWithSliders ? "/" : "Controller 🤖"}
 				</button>
-			</nav>
+			</div>
 			{showWithSliders ? <WithSliders /> : <P5Sketch />}
 		</>
 	);

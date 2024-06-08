@@ -5,20 +5,21 @@ import "./WithSliders.scss";
 const WithSliders = () => {
 	const sketchRef = useRef();
 	const [colorR, setColorR] = useState(255);
+	const [bgColor, setBgColor] = useState("#ffffff");
 	const [colorG, setColorG] = useState(0);
 	const [colorB, setColorB] = useState(0);
-	const [fontSize, setFontSize] = useState(200);
-	const [frameRate, setFrameRate] = useState(30);
+	const [fontSize, setFontSize] = useState(500);
+	const [frameRate, setFrameRate] = useState(5);
 	const [rubbleW, setRubbleW] = useState(2);
-	const [rubbleH, setRubbleH] = useState(4);
+	const [rubbleH, setRubbleH] = useState(2);
 	const [polygonSides, setPolygonSides] = useState(4);
-	const [inputWords, setInputWords] = useState("Digite aqui...");
+	const [inputWords, setInputWords] = useState("Digite aqui... 🤖");
 
 	useEffect(() => {
 		const sketch = (p) => {
 			let fonts = [];
 			let points;
-			let words = inputWords.split(","); // Split input into array of words
+			let words = inputWords.split(",");
 			let colorRSlider,
 				colorGSlider,
 				colorBSlider,
@@ -37,11 +38,11 @@ const WithSliders = () => {
 			p.setup = () => {
 				p.createCanvas(p.windowWidth, p.windowHeight);
 				p.noFill();
-				p.background("#fff");
+				p.background(bgColor);
 
 				colorRSlider = labelSlider(
 					p,
-					"Red:",
+					"R:",
 					10,
 					p.height - 50,
 					colorR,
@@ -49,7 +50,7 @@ const WithSliders = () => {
 				);
 				colorGSlider = labelSlider(
 					p,
-					"Green:",
+					"G:",
 					10,
 					p.height - 100,
 					colorG,
@@ -57,13 +58,12 @@ const WithSliders = () => {
 				);
 				colorBSlider = labelSlider(
 					p,
-					"Blue:",
+					"B:",
 					10,
 					p.height - 150,
 					colorB,
 					setColorB
 				);
-
 				fontSizeSlider = labelSlider(
 					p,
 					"Font Size:",
@@ -84,10 +84,9 @@ const WithSliders = () => {
 					1,
 					60
 				);
-
 				rubbleWSlider = labelSlider(
 					p,
-					"Rubble Width:",
+					"Texture 2:",
 					200,
 					p.height - 50,
 					rubbleW,
@@ -97,7 +96,7 @@ const WithSliders = () => {
 				);
 				rubbleHSlider = labelSlider(
 					p,
-					"Rubble Height:",
+					"Texture 1:",
 					200,
 					p.height - 100,
 					rubbleH,
@@ -107,14 +106,16 @@ const WithSliders = () => {
 				);
 				polygonSidesSlider = labelSlider(
 					p,
-					"Polygon Sides:",
-					200,
+					"Paths:",
+					100,
 					p.height - 150,
 					polygonSides,
 					setPolygonSides,
 					3,
 					10
 				);
+				p.fill(bgColor);
+				p.background(bgColor);
 			};
 
 			p.draw = () => {
@@ -128,7 +129,7 @@ const WithSliders = () => {
 				setPolygonSides(polygonSidesSlider.value());
 
 				let currentColor = p.color(colorR, colorG, colorB);
-				p.fill(currentColor);
+
 				p.stroke(currentColor);
 
 				p.frameRate(frameRate);
@@ -187,7 +188,6 @@ const WithSliders = () => {
 
 			function rubble(obj) {
 				let p_arr = [];
-
 				for (let i = 0; i < 10; i++)
 					p_arr.push(p.createVector(Gauss() * obj.w, Gauss() * obj.h));
 
@@ -196,7 +196,7 @@ const WithSliders = () => {
 				p.rotate(obj.a);
 				p_arr.forEach((item) => {
 					p.beginShape();
-					polygon(item.x, item.y, 6, polygonSides).forEach((item2) => {
+					polygon(item.x, item.y, 2, polygonSides).forEach((item2) => {
 						p.vertex(item2.x, item2.y);
 					});
 					p.endShape(p.CLOSE);
@@ -218,21 +218,17 @@ const WithSliders = () => {
 
 			function Gauss() {
 				let x1, x2, rad;
-
 				do {
 					x1 = 2 * p.random(1) - 1;
 					x2 = 2 * p.random(1) - 1;
 					rad = x1 * x1 + x2 * x2;
 				} while (rad >= 1 || rad === 0);
-
 				let c = p.sqrt((-2 * Math.log(rad)) / rad);
-
 				return x1 * c;
 			}
 		};
 
 		const p5Instance = new p5(sketch, sketchRef.current);
-
 		return () => {
 			p5Instance.remove();
 		};
@@ -246,17 +242,23 @@ const WithSliders = () => {
 		rubbleH,
 		polygonSides,
 		inputWords,
+		bgColor,
 	]);
 
 	return (
 		<>
-			{/* Input field for words */}
 			<input
 				className="slider-input"
 				type="text"
 				value={inputWords}
 				onChange={(e) => setInputWords(e.target.value)}
-				placeholder="Enter words separated by commas"
+				placeholder="Digite aqui..."
+			/>
+			<input
+				type="color"
+				value={bgColor}
+				onChange={(e) => setBgColor(e.target.value)}
+				style={{ marginLeft: "10px" }}
 			/>
 			<div className="" ref={sketchRef}></div>
 		</>
