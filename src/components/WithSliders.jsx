@@ -8,11 +8,11 @@ const WithSliders = () => {
 	const [bgColor, setBgColor] = useState("#ffffff");
 	const [colorG, setColorG] = useState(0);
 	const [colorB, setColorB] = useState(0);
-	const [fontSize, setFontSize] = useState(12, 700);
-	const [frameRate, setFrameRate] = useState(5);
-	const [rubbleW, setRubbleW] = useState(2);
-	const [rubbleH, setRubbleH] = useState(2);
-	const [polygonSides, setPolygonSides] = useState(4);
+	const [fontSize, setFontSize] = useState(300);
+	const [frameRate, setFrameRate] = useState(3);
+	const [rubbleW, setRubbleW] = useState(1);
+	const [rubbleH, setRubbleH] = useState(1);
+	const [polygonSides, setPolygonSides] = useState(100);
 	const [inputWords, setInputWords] = useState("Digite aqui... 🤖");
 
 	useEffect(() => {
