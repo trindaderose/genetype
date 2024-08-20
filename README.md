@@ -1,4 +1,4 @@
-<h1 align="center">Genetype 👋</h1>
+<h1 align="left">Genetype 👋</h1>
 <p>
 A P5.js project with Vite
 </p>
@@ -9,8 +9,10 @@ A P5.js project with Vite
 
 ## TODO
 
-> - Add Controllers
-> - Add Responsiveness
+-   [x] Add Controllers
+-   [ ] Add Responsiveness
+-   [ ] Fix textures
+-   [ ] Fix sizes
 
 ## DONE
 
@@ -30,12 +32,4 @@ npm run dev
 
 👤 **Rose Trindade**
 
-- Github: [@trindaderose](https://github.com/trindaderose)
-
-## Show your support
-
-Give a ⭐️ if this project helped you!
-
----
-
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
+-   Github: [@trindaderose](https://github.com/trindaderose)

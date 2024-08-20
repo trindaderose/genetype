@@ -34,7 +34,6 @@ const P5Sketch = () => {
 				p.background("#fff");
 				p.frameRate(2);
 
-				// Initialize font after preload
 				font = p.random(mathematicalFont);
 			};
 
@@ -77,19 +76,24 @@ const P5Sketch = () => {
 
 				for (let i = 0; i < 20; i++)
 					p_arr.push(
-						p.createVector(myGaussian() * obj.w, myGaussian() * obj.h)
+						p.createVector(
+							myGaussian() * obj.w,
+							myGaussian() * obj.h
+						)
 					);
 				p.push();
 				p.translate(obj.pos.x, obj.pos.y);
-				// Uncomment the next line if you define `a` somewhere
-				// p.rotate(obj.a);
+
 				p_arr.forEach(function (item) {
 					p.beginShape();
-					regular_polygon(item.x, item.y, p.random([10, 10, 4]), 6).forEach(
-						function (item2) {
-							p.vertex(item2.x, item2.y);
-						}
-					);
+					regular_polygon(
+						item.x,
+						item.y,
+						p.random([10, 10, 4]),
+						6
+					).forEach(function (item2) {
+						p.vertex(item2.x, item2.y);
+					});
 					p.endShape(p.CLOSE);
 				});
 				p.pop();

@@ -13,9 +13,9 @@ function App() {
 	};
 
 	return (
-		<div className="na">
-			<Underlay />
+		<div>
 			<div className="nav">
+			<Underlay />
 				<button onClick={toggleWithSliders}>
 					{showWithSliders ? "/" : "Controller 🤖"}
 				</button>
