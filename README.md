@@ -13,8 +13,9 @@ A P5.js project with Vite
 -   [ ] Add Responsiveness
 -   [ ] Fix textures
 -   [ ] Fix sizes
+-   [ ] Refactoring
 
-## DONE
+👻
 
 ## Install
 
