@@ -123,8 +123,7 @@ export function Overlay() {
 					color: "#A2E366",
 				}}
 			>
-				<a href="">pmnd.rs</a> <a href="https://github.com/trindaderose">git</a>{" "}
-				<a href="">csb</a>
+				<a href="">trindaderose</a> <a href="https://github.com/trindaderose">git</a>{" "}
 			</p>
 		</div>
 	);
